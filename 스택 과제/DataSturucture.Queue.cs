@@ -46,7 +46,8 @@ namespace DataStructure
             array[tail] = item;
             MoveNext(ref tail);
         }
-        private void MoveNext(ref int index)                    // ref int index 해당 매개 변수가 가리키는 값
+        private void MoveNext(ref int index)                    
+        // 해당 매개 변수가 가리키는 값
         {
             index = (index == array.Length - 1) ? 0 : index + 1;
             // index가 배열의 마지막 값에서 1을 뺀 값과 같지 않으면 0으로 돌아가고 아니면 인덱스에 1을 더해줌
@@ -127,6 +128,9 @@ namespace DataStructure
             }
             array = newArray;
             // 배열을 새로운 배열로 대입한다(교체)
+
+            // 배열이 가득차면 2배로 늘려준다음 tail이 head보다 앞에 있는 경우에는 무슨 값이 있든 전부 복사하고 대입한다.
+            // head가 tail보다 앞에 있다면 배열의 0부터 마지막 배열에서 head를 빼고 tail까지 복사한다음 대입한다.
 
         }
     }

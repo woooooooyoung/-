@@ -20,9 +20,9 @@ namespace DataStructure
         public Stack()
         {
             array = new T[DefaultCapacity];
-            // T형식의 배열을 생성하고 DefaultCapacity의 크기로 설정
+            // 배열을 새로운 T형식의 배열을 생성하고 DefaultCapacity의 크기로 설정
             topIndex = -1;
-            // topIndex는 -1
+            // topIndex는 -1로 선언
         }
 
         public int Count { get { return topIndex + 1; } }
@@ -31,8 +31,9 @@ namespace DataStructure
         public void Clear()
         {
             array = new T[DefaultCapacity];
+            // 배열을 새로운 T형식의 배열을 생성하고 DefaultCapacity의 크기로 설정
             topIndex = -1;
-            // Clear을 사용할시 맨 처음으로 돌아간다 (-1)
+            // topIndex는 -1로 선언, Clear을 사용할시 맨 처음으로 돌아간다 (-1)
         }
 
         public T Peek()
@@ -42,7 +43,7 @@ namespace DataStructure
             // 비어있다면 예외처리함
 
             return array[topIndex];
-            // 배열의 가장 위의 값으로 반환
+            // 배열의 topIndex로 반환
         }
 
         public bool TryPeek(out T result)
@@ -71,7 +72,7 @@ namespace DataStructure
             // 예외처리함
 
             return array[topIndex--];
-            // 배열의 topIndex을 반환한 후 1을 감소시킴 (-2 -> -2 1 감소 = 1)
+            // 배열의 topIndex에 1을 감소시고 반환 (-2 -> -2 1 감소 = 1)
         }
 
         public bool TryPop(out T result)
@@ -113,7 +114,7 @@ namespace DataStructure
 
         private bool IsFull()
         {
-            return Count == array.Length; // 지금의 카운터가 배열의 크기만큼
+            return Count == array.Length; 
         }
     }
 }
