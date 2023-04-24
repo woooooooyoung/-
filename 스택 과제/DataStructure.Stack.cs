@@ -86,6 +86,7 @@ namespace DataStructure
             else
             {
                 result = array[topIndex--];
+                // 1 감소한 배열을 result에 대입
                 return true;
             }
         }
@@ -110,11 +111,13 @@ namespace DataStructure
         private bool IsEmpty()
         {
             return Count == 0;
+            // 비어있다
         }
 
         private bool IsFull()
         {
             return Count == array.Length; 
+            // 꽉차있음
         }
     }
 }

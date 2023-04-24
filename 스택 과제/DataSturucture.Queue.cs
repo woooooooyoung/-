@@ -20,8 +20,11 @@ namespace DataStructure
         public Queue()
         {
             array = new T[DefaultCapacity + 1];
+            // 배열을 새로운 T형식의 배열을 생성하고 DefaultCapacity +1의 크기로 설정
             head = 0;
+            // head를 0으로 선언
             tail = 0;
+            // tail을 0으로 선언
         }
         public int Count
         {
