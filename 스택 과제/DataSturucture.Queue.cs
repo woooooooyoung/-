@@ -17,6 +17,8 @@ namespace DataStructure
         private int tail;
         
 
+        
+
         public Queue()
         {
             array = new T[DefaultCapacity + 1];
@@ -43,11 +45,16 @@ namespace DataStructure
         public void Enqueue(T item)
         {
             if (ISFull())
+                // 가득 찼을 때
             {
                 Grow();
+                // 배열을 추가함
             }
             array[tail] = item;
+            // item의 값을 배열의 tail에 대입
             MoveNext(ref tail);
+
+
         }
         private void MoveNext(ref int index)                    
         // 해당 매개 변수가 가리키는 값
