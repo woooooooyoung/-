@@ -39,6 +39,7 @@ namespace DataStructure
         {
             if (IsEmpty())
                 throw new InvalidOperationException();
+            // 비어있다면 예외처리함
 
             return array[topIndex];
             // 배열의 가장 위의 값으로 반환

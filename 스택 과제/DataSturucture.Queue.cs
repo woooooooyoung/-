@@ -54,7 +54,7 @@ namespace DataStructure
         }
 
         private bool IsEmpty()            
-        //비어있는 경우
+        // 비어있는 경우
         {
             return head == tail;
             // head와 tail을 같은 값으로 반환한다
@@ -85,22 +85,26 @@ namespace DataStructure
                 // 예외처리한다
 
             T result = array[head];
-            // 배열의 첫번째 값으로 대입한다
+            // 배열의 head로 대입한다
             MoveNext(ref head);
             return result;
+            // MoneNext를 호출하고 head를 다음 위치로 이동시키고 result를 반환
         }
         public T Peek()
         {
             if (IsEmpty())
                 throw new InvalidOperationException();
+            // 비어있으면 예외처리함
             return array[head];
             // 배열을 배열의 첫번째 값으로 반환한다
         }
         public void Grow()
+        // 배열이 가득 차면 크기를 늘려줌
         {
             int newCapacity = array.Length * 2;             
             // 현재 배열을 2배의 값으로 새로운 배열을 만들어줌
             T[] newArray = new T[newCapacity];
+            // T의 배열을 선언하고 선언한 배열의 크기를 위에서 설정한 newCapacity의 배열로 생성함
             if (head < tail)                                
             // tail이 head보다 앞에있을 때 (작을 때) 5(head) < 1(tail)
                 Array.Copy(array, newArray, Count);         
@@ -115,9 +119,9 @@ namespace DataStructure
                 // 배열의 0번부터 새로운 배열의 마지막 값에서 헤드값을 빼고 테일까지 복사)
                 // 0번부터 테일까지 복사
                 head = 0; 
-                //헤드를 0으로
+                // head를 0으로
                 tail = Count; 
-                //테일을 가장뒤로
+                // tail을 가장뒤로
 
                 // head와 tail이 엇갈려 있는상황(tail이 더 앞에 있는 상황) 
             }
